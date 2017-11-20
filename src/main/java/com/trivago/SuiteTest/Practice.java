@@ -26,7 +26,7 @@ public class Practice {
 	WebDriver driver;
 	
 	static java.util.Properties config = Properties.readPropFile();
-	PageFactory pf = new PageFactory(driver);
+	PageFactory pf = new PageFactory();
 	Support support = new Support(driver);
 	
 	public String search_city = config.getProperty("city");
@@ -44,7 +44,7 @@ public class Practice {
 		try {
 			ProcessBuilder pb = new ProcessBuilder("cmd", "/c", "killdriver.bat");
 			System.out.println(System.getProperty("user.dir"));
-			File dir = new File(System.getProperty("user.dir") + "\\drivers");
+			File dir = new File(System.getProperty("user.dir") + "\\external_resources");
 			pb.directory(dir);
 			pb.start();
 			Thread.sleep(500);
@@ -60,7 +60,7 @@ public class Practice {
 	public void enter_site() throws InterruptedException {
 		try {
 
-			System.setProperty("webdriver.chrome.driver",System.getProperty("user.dir") + "\\drivers\\chromedriver.exe");
+			System.setProperty("webdriver.chrome.driver",System.getProperty("user.dir") + "\\external_resources\\chromedriver.exe");
 			
 			ChromeOptions options = new ChromeOptions();
 			options.addArguments("--start-maximized");
@@ -198,9 +198,9 @@ public class Practice {
 // to do wait until instead of sleep
 			Thread.sleep(1000);
 			
-			pf.date_picker("checkin", checkin_date);
-			pf.date_picker("checkout", checkout_date);
-			pf.room_select(roomtype);
+			pf.date_picker(driver, "checkin", checkin_date);
+			pf.date_picker(driver, "checkout", checkout_date);
+			pf.room_select(driver, roomtype);
 			
 			List<WebElement> filter_list = driver.findElements(By.cssSelector(".fl-group.clearfix h4+ul li button"));
 			

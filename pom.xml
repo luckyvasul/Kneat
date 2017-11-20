@@ -5,10 +5,6 @@
 	<artifactId>com.trivago</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 
-	<properties>
-		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-	</properties>
-
 
 	<dependencies>
 		<dependency>
@@ -17,7 +13,15 @@
 			<version>4.12</version>
 		</dependency>
 
-		<!-- https://mvnrepository.com/artifact/org.seleniumhq.selenium/selenium-support -->
+		<!-- https://mvnrepository.com/artifact/org.seleniumhq.selenium/selenium-server -->
+		<dependency>
+			<groupId>org.seleniumhq.selenium</groupId>
+			<artifactId>selenium-server</artifactId>
+			<version>3.3.1</version>
+		</dependency>
+
+
+		<!-- https://mvnrepository.com/artifact/org.seleniumhq.selenium/selenium-java -->
 		<dependency>
 			<groupId>org.seleniumhq.selenium</groupId>
 			<artifactId>selenium-java</artifactId>
@@ -30,6 +34,5 @@
 			<artifactId>selenium-chrome-driver</artifactId>
 			<version>3.3.1</version>
 		</dependency>
-
 	</dependencies>
 </project>

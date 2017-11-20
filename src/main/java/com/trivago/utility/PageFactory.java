@@ -8,23 +8,8 @@ import org.openqa.selenium.WebElement;
 
 
 public class PageFactory {
-	
-	private WebDriver driver;
-	
-	public WebDriver getDriver() {
-		return driver;
-	}
-	
-	public void setDriver(WebDriver driver) {
-		this.driver = driver;
-	}
-	
-	public PageFactory(WebDriver driver) {
-		super();
-		this.driver = driver;
-	}
 
-	public void date_picker(String checkbox, String datetoselect) {
+	public void date_picker(WebDriver driver, String checkbox, String datetoselect) {
 		try {
 			Thread.sleep(1000);
 			//support.clickonEmelent("cssSelector", "#horus-querytext");
@@ -58,7 +43,7 @@ public class PageFactory {
 		}
 	}
 	
-	public void room_select(String roomtype) {
+	public void room_select(WebDriver driver, String roomtype) {
 		try {
 			Thread.sleep(500);
 			//support.clickonEmelent("cssSelector", "#horus-querytext");
